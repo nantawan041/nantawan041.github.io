@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function sayHello(){ //สร้างฟังก์ชั่น
+            document.getElementById('output').innerHTML="Say Girl"
+        }
+        function sayhi(){ //สร้างฟังก์ชั่นให้ข้อความในinnerไปแสดงบนoutput
+            document.getElementById('output').innerHTML="Say Hi"
+        }
+    </script>
+    <title>05-button.html</title>
+</head>
+
+<body>
+    <!--เมื่อคลิกให้เรียกใช้ฟังชั่นsayHello-->
+    <input type="button" value="click here" onclick="sayHello()">
+    <br><br>
+    <!--เมื่อคลิกให้เรียกใช้ฟังชั่นsayhi-->
+    <button onclick="sayhi()">click you pretty</button>
+    <p id="output"></p> <!--อันนี้คือบันทัดล่างoutputคือตัวแปลให้ตัวอื่นสั่งบอกว่ามาใส่ข้อความที่นี่-->
+</body>
+</html>
