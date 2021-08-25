@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script>
+        //let n
+        let ans
+        function hilo(num){
+            //n = parseInt (num)
+                if(parseInt (num)> 5){
+                    return "H1"
+                } else {
+                    return "LOW"
+                }
+                //document.getElementById('output').innerHTML = ans
+                //return ans
+            }
+    </script>
+
+    <title>11-if.html</title>
+</head>
+<body>
+    Input Number: <input type="text" name="" id="num1">
+    <br><br>
+    <input type="button" value="submit" onclick="document.getElementById('output').innerHTML = hilo(document.getElementById('num1').value)">
+    <br><br>
+    <p id="output"></p>
+</body>
+</html>
