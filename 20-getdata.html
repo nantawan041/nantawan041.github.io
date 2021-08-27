@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20-getdata.html 0041</title>
+
+    <script>
+        function display(){
+            const urlParams = new URLSearchParams(window.location.search)
+            document.getElementById('sid').innerHTML = urlParams.get('sid')
+            document.getElementById('sname').innerHTML = urlParams.get('sname') 
+            document.getElementById('id').innerHTML = urlParams.get('id')
+
+        }
+    </script>
+
+</head>
+<body onload="display()">
+    <p id="sid"></p>
+    <p id="sname"></p>
+    <p id="id"></p>
+</body>
+</html>
