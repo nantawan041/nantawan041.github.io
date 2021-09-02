@@ -122,6 +122,8 @@
                        </div>
                        <input class="btn btn-danger w-25" type="submit" value="SUBMIT" onclick="setdata()">
                        <input class="btn btn-danger w-25" type="reset" value="RESET" onclick="resetdata()">
+                       <input class="btn btn-warning w-25" type="button" value="Dlete Storage" onclick="deletestorage()">
+                    
                     </p>
             
                 </div>
@@ -152,28 +154,35 @@
         //let local_empid = []
         //let local_empname = []
         function setdata(){
-            local_employee = localStorage.getItem('employee')
             employee = eval(local_employee)
             empid = document.getElementById('empid').value
             empname = document.getElementById('empname').value
-            console.log(empid + '' + empname) //ใช้ที่ปุ่มsubmit
-            employee.push({"empid" :empid, "empname" :empname})
-            console.log(employee)
-            //employee = JSON.stringify({"empid" :empid, "empname" :empname})
+            if(empid != '' && empname != ''){
+            if (employee == null) {
+                employee =[{"empid" : empid, "empname" : empname}]
+            }else{
+                employee.push({"empid" :empid, "empname" :empname})
+            }
             localStorage.setItem('employee',JSON.stringify(employee))
-            //local_empid.push(empid)
-           // local_empname.push(empname)
-            //console.log(local_empid)
-            //localStorage.setItem('empid',local_empid)
-            //localStorage.setItem('empname',local_empname)
+            local_employee = localStorage.getItem('employee')
             document.getElementById('empid').value = ''
             document.getElementById('empname').value =''
+            alert('บันทึกข้อมูลแล้วค่ะ ขอบคุณ')
+        }else{
+            alert('ป้อนข้อมูลดิ้')
         }
-
+    }
         function resetdata(){
             document.getElementById('empid').value = ''
             document.getElementById('empname').value =''
         }
+        function deletestorage(){
+          if(confirm('จะลบจริงๆดิ่!!')){
+            localStorage.removeItem('employee')
+            employee = []
+            local_employee = null
+        }}
+    
     </script>
 </body>
       <!--https://jsonformatter.curiousconcept.com/-->
